@@ -1,4 +1,3 @@
-package ru.netology
 
 class Reposts(
     count: Int = 0,

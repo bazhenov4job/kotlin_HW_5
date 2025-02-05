@@ -1,4 +1,4 @@
-package ru.netology
+
 
 class Copyright(
     id: Int = 0,

@@ -1,4 +1,3 @@
-package ru.netology
 
 class Comments(
     count: Int = 0,

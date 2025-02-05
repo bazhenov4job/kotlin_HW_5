@@ -1,6 +1,5 @@
-package ru.netology
 
-class WallService {
+object WallService {
     private var posts = emptyArray<Post>()
 
     // переменная для храенения уникальных модификаторов

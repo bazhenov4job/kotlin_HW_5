@@ -1,4 +1,3 @@
-package ru.netology
 
 data class Post(
     val id: Int = 0,

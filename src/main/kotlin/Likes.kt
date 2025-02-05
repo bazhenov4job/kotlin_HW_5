@@ -1,4 +1,4 @@
-package ru.netology
+
 
 class Likes(
     counter: Int = 0,

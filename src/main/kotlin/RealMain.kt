@@ -1,4 +1,3 @@
-package ru.netology
 
 fun main() {
     val post: Post = Post(
@@ -9,7 +8,7 @@ fun main() {
         reposts = Reposts(),
         views = Views(),
     )
-    var wallservice = WallService()
+    var wallservice = WallService
     wallservice.add(post)
     println(wallservice.getLast())
     println(wallservice.update(post))

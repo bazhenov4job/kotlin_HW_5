@@ -33,6 +33,6 @@ class WallServiceTest {
 
         val result = wallService.update(post=Post(id=4))
 
-        assertFalse(result) 
+        assertFalse(result)
     }
 }

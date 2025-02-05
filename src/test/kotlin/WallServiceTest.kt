@@ -13,10 +13,10 @@ class WallServiceTest {
     @Test
     fun testAddPost() {
         val wallService = WallService
-        val originPost = Post(id=1, postType = "repost")
+        val originPost = Post()
         val addedPost = wallService.add(originPost)
-
-        assertEquals(addedPost, originPost)
+        val postId = addedPost.id
+        assertNotEquals(0, postId)
     }
 
     @Test

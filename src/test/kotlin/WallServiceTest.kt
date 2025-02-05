@@ -11,6 +11,15 @@ class WallServiceTest {
     }
 
     @Test
+    fun testAddPost() {
+        val wallService = WallService
+        val originPost = Post(id=1, postType = "repost")
+        val addedPost = wallService.add(originPost)
+
+        assertEquals(addedPost, originPost)
+    }
+
+    @Test
     fun updateExisting() {
         val wallService = WallService
 

@@ -22,4 +22,17 @@ class WallServiceTest {
 
         assertTrue(result)
     }
+
+    @Test
+    fun updateNotExisting() {
+        val wallService = WallService
+
+        wallService.add(post=Post())
+        wallService.add(post=Post())
+        wallService.add(post=Post())
+
+        val result = wallService.update(post=Post(id=4))
+
+        assertFalse(result) 
+    }
 }

@@ -44,3 +44,4 @@ bin/
 ###Files with lesson's examples###
 src/main/kotlin/DataClass.kt
 src/main/kotlin/Main.kt
+src/main/kotlin/Amin.kt

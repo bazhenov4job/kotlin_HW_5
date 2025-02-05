@@ -6,5 +6,4 @@ class Comments(
     groupsCanPost: Boolean = true,
     canClose: Boolean = true,
     canOpen: Boolean = true
-) {
-}
+)

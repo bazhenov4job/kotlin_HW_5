@@ -6,7 +6,8 @@ object WallService {
     private var unique_id: Int = 0
 
     fun add(post: Post): Post {
-        val post = post.copy(id = unique_id + 1)
+        unique_id += 1
+        val post = post.copy(id = unique_id)
         posts += post
         return post
     }
@@ -22,5 +23,9 @@ object WallService {
     }
     fun getLast(): Post {
         return posts.last()
+    }
+    fun clear() {
+        posts = emptyArray()
+        unique_id = 0
     }
 }

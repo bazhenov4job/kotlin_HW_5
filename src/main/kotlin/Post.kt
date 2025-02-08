@@ -1,3 +1,4 @@
+import attachments.Attachment
 
 data class Post(
     val id: Int = 0,
@@ -5,10 +6,11 @@ data class Post(
     val fromId: Int = 0,
     var text: String = "",
     var friendsOnly: Boolean = false,
-    var comments: Comments = Comments(),
+    var comments: Comments? = Comments(),
     val copyright: Copyright = Copyright(),
     var likes: Likes = Likes(),
-    var reposts: Reposts = Reposts(),
-    var views: Views = Views(),
-    val postType: String = "post"
+    var reposts: Reposts? = Reposts(),
+    var views: Views? = Views(),
+    val postType: String = "post",
+    val Attachments: Array<Attachment>
 )

@@ -1,3 +1,4 @@
+import attachments.*
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -13,7 +14,9 @@ class WallServiceTest {
     @Test
     fun testAddPost() {
         val wallService = WallService
-        val originPost = Post()
+        val originPost = Post(
+            Attachments = arrayOf(AttachmentFile(File(1, 1, "doge.jpg")))
+        )
         val addedPost = wallService.add(originPost)
         val postId = addedPost.id
         assertNotEquals(0, postId)
@@ -23,11 +26,18 @@ class WallServiceTest {
     fun updateExisting() {
         val wallService = WallService
 
-        wallService.add(post=Post())
-        wallService.add(post=Post())
-        wallService.add(post=Post())
+        wallService.add(post=Post(
+            Attachments = arrayOf(AttachmentFile(File(1, 1, "doge.jpg")))
+        ))
+        wallService.add(post=Post(
+            Attachments = arrayOf(AttachmentVideo(Video(11, 123, "StarDuo.mkv")))
+        ))
+        wallService.add(post=Post(
+            Attachments = arrayOf(AttachmentAudio(Audio(23, 13, "Michael Jackson")))
+        ))
 
-        val result = wallService.update(post=Post(id=1))
+        val result = wallService.update(post=Post(id=1,
+            Attachments = arrayOf(AttachmentFile(File(1, 1, "doge.jpg")))))
 
         assertTrue(result)
     }
@@ -36,11 +46,20 @@ class WallServiceTest {
     fun updateNotExisting() {
         val wallService = WallService
 
-        wallService.add(post=Post())
-        wallService.add(post=Post())
-        wallService.add(post=Post())
+        wallService.add(post=Post(
+            Attachments = arrayOf(AttachmentFile(File(1, 1, "doge.jpg")))
+        ))
+        wallService.add(post=Post(
+            Attachments = arrayOf(AttachmentVideo(Video(11, 123, "StarDuo.mkv")))
+        ))
+        wallService.add(post=Post(
+            Attachments = arrayOf(AttachmentAudio(Audio(23, 13, "Michael Jackson")))
+        ))
 
-        val result = wallService.update(post=Post(id=4))
+        val result = wallService.update(post=Post(
+            id=4,
+            Attachments = arrayOf(AttachmentStory(Story(1, 1, 12345678)))
+        ))
 
         assertFalse(result)
     }

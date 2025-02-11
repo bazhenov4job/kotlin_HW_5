@@ -60,7 +60,28 @@ class WallServiceTest {
             id=4,
             Attachments = arrayOf(AttachmentStory(Story(1, 1, 12345678)))
         ))
-
         assertFalse(result)
+
+    }
+
+    @Test
+    fun addCommentFindsPost() {
+        val wallService = WallService
+        val originPost = Post(
+            id = 1,
+            Attachments = arrayOf(AttachmentFile(File(1, 1, "doge.jpg")))
+        )
+        wallService.add(originPost)
+        val testComment = Comment(1, 1, 123, "Пиши ещё!")
+        val addedComment = wallService.addComment(1, testComment)
+        assertEquals(testComment, addedComment)
+    }
+
+    @Test(expected = PostNotFoundException::class)
+    fun addCommentDidNotFoundPost(){
+        val wallService = WallService
+        val testComment = Comment(1, 1, 123, "Пиши ещё!")
+        val addedComment = wallService.addComment(1, testComment)
+        assertEquals(testComment, addedComment)
     }
 }

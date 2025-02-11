@@ -37,7 +37,6 @@ object WallService {
                 comments += comment.copy()
                 return comment
             }
-
         }
         throw PostNotFoundException("Пост с ID $postId не найден.")
         return comment

@@ -1,6 +1,7 @@
 
 object WallService {
     private var posts = emptyArray<Post>()
+    private var comments = emptyArray<Comment>()
 
     // переменная для храенения уникальных модификаторов
     private var unique_id: Int = 0
@@ -27,5 +28,16 @@ object WallService {
     fun clear() {
         posts = emptyArray()
         unique_id = 0
+    }
+
+    fun addComment(postId: Int, comment: Comment): Comment{
+        for (post in posts) {
+            if (post.id == postId) {
+                comments += comment.copy()
+                return comment
+            } else {
+                TODO("требуется добавить бросок исключения")
+            }
+        }
     }
 }

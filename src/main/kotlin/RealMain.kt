@@ -13,6 +13,7 @@ fun main() {
     )
     var wallservice = WallService
     wallservice.add(post)
+    println(wallservice.addComment(1, Comment(1, 1, 123, "КГ АМ!")))
     println(wallservice.getLast())
 
     println(wallservice.update(post))

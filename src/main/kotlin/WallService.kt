@@ -1,3 +1,4 @@
+import attachments.PostNotFoundException
 
 object WallService {
     private var posts = emptyArray<Post>()
@@ -35,9 +36,11 @@ object WallService {
             if (post.id == postId) {
                 comments += comment.copy()
                 return comment
-            } else {
-                TODO("требуется добавить бросок исключения")
             }
+
         }
+        throw PostNotFoundException("Пост с ID $postId не найден.")
+        return comment
     }
+
 }

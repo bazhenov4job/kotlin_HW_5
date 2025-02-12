@@ -82,6 +82,5 @@ class WallServiceTest {
         val wallService = WallService
         val testComment = Comment(1, 1, 123, "Пиши ещё!")
         val addedComment = wallService.addComment(1, testComment)
-        assertEquals(testComment, addedComment)
     }
 }

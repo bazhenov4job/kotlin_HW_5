@@ -39,7 +39,6 @@ object WallService {
             }
         }
         throw PostNotFoundException("Пост с ID $postId не найден.")
-        return comment
     }
 
 }
